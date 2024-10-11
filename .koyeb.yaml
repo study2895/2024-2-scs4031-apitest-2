@@ -6,4 +6,4 @@ services:
       context: .
       builder: heroku/buildpacks:20
     run:
-      command: npm start
+      command: npm run serve
