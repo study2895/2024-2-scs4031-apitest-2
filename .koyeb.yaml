@@ -4,6 +4,8 @@ services:
     type: web
     build:
       context: .
-      builder: heroku/buildpacks:20
+      builder: https://github.com/heroku/heroku-buildpack-nodejs.git
     run:
       command: npm start
+    ports:
+      - 8000:8000
