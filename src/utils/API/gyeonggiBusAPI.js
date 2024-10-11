@@ -18,7 +18,7 @@ const serviceKeyDecoded =
 
 export async function getBusRouteList(keyword) {
   // API 호출 URL
-  const url = `http://apis.data.go.kr/6410000/busrouteservice/getBusRouteList`
+  const url = `https://apis.data.go.kr/6410000/busrouteservice/getBusRouteList`
   const queryParams = `?serviceKey=${serviceKeyEncoded}&keyword=${encodeURIComponent(
     keyword
   )}`
