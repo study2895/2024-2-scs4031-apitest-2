@@ -1,10 +1,9 @@
-build:
-  context: ./frontend
 name: apitest-2
 services:
   - name: web
     type: web
     build:
       context: .
-      builder: heroku/buildpacks:20 # Node.js 빌드팩 사용
-    port: 8gi000
+      builder: heroku/buildpacks:20
+    run:
+      command: npm start
