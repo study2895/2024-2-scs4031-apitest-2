@@ -2,9 +2,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import BusInfo from '../views/BusInfoPage.vue'
 import BusSearchResults from '../views/BusSearchResultsPage.vue'
-import NaverMapView from '../views/NaverMapView.vue'
+import NaverMapView from '../views/MapTestPage/NaverMapView.vue'
 import { NaverMap } from 'vue3-naver-maps'
-import NaverLocationSearchView from '@/views/NaverLocationSearchView.vue'
+import NaverLocationSearchView from '@/views/MapTestPage/NaverLocationSearchView.vue'
+import OdisayAPITestView from '@/views/MapTestPage/OdisayAPITestView.vue'
+import GeologicalAPITest from '@/views/MapTestPage/GeologicalAPITest.vue'
+import odi from '@/views/MapTestPage/odi.vue'
+import RouteSearchResultView from '@/views/MapTestPage/RouteSearchResultView.vue'
+import KakaoAPIView from '@/views/MapTestPage/kakaoAPIView.vue'
 
 const routes = [
   {
@@ -30,6 +35,32 @@ const routes = [
     name: 'NaverLocationSearchView',
     component: NaverLocationSearchView
   },
+  {
+    path: '/odisay',
+    name: 'odisayAPITestView',
+    component: OdisayAPITestView
+  },
+  {
+    path: '/geo',
+    name: 'GeologicalAPITest',
+    component: GeologicalAPITest
+  },
+  {
+    path: '/odi',
+    name: 'odi',
+    component: odi
+  },
+  {
+    path: '/route',
+    name: 'RouteSearchResultView',
+    component: RouteSearchResultView
+  },
+  {
+    path: '/kakao',
+    name: 'KakaoAPIView',
+    component: KakaoAPIView
+  },
+
   {
     path: '/:catchAll(.*)',
     redirect: '/auth/signin' // 잘못된 경로는 로그인 페이지로 리다이렉트

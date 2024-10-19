@@ -9,6 +9,8 @@ import FavoritesList from '@/views/FavoritesList.vue'
 import FavoriteItem from '@/views/FavoriteItem.vue'
 import SlidingMenu from '@/views/SlidingMenu.vue'
 import BusItem from '@/views/BusItem.vue'
+import NaverMapView from '@/views/MapTestPage/NaverMapView.vue'
+import NaverLocationSearchView from '@/views/MapTestPage/NaverLocationSearchView.vue'
 
 export {
   Header,

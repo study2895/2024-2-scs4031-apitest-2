@@ -1,7 +1,11 @@
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
+const dotenv = require('dotenv')
+const webpack = require('webpack') // webpack import 추가
+dotenv.config()
 
 module.exports = defineConfig({
+  lintOnSave: false,
   transpileDependencies: true,
   chainWebpack: (config) => {
     // ESLint 비활성화
@@ -12,7 +16,14 @@ module.exports = defineConfig({
       alias: {
         '@': path.resolve(__dirname, 'src')
       }
-    }
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        __VUE_OPTIONS_API__: true, // Options API 사용 여부
+        __VUE_PROD_DEVTOOLS__: false, // 프로덕션에서 devtools 사용 여부
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false // Hydration Mismatch 플래그
+      })
+    ]
   },
   devServer: {
     proxy: {

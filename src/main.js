@@ -6,13 +6,14 @@ import store from './store'
 import axios from 'axios'
 import './assets/styles/global.css'
 import { createNaverMap } from 'vue3-naver-maps'
+import apiConfig from './utils/API/apiConfig'
 
 // Vue 앱 생성
 const app = createApp(App)
 
 // 네이버 지도 설정
 app.use(createNaverMap, {
-  clientId: 'z8tyyw77g6',
+  clientId: process.env.VUE_APP_NAVER_CLIENT_ID || apiConfig.NAVER_CLIENT_ID,
   category: 'ncp',
   subModules: []
 })
