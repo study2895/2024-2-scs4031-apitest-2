@@ -10,6 +10,8 @@ import GeologicalAPITest from '@/views/MapTestPage/GeologicalAPITest.vue'
 import odi from '@/views/MapTestPage/odi.vue'
 import RouteSearchResultView from '@/views/MapTestPage/RouteSearchResultView.vue'
 import KakaoAPIView from '@/views/MapTestPage/kakaoAPIView.vue'
+import plus from '@/views/MapTestPage/plus.vue'
+import Mobiletest from '@/views/MapTestPage/mobiletest.vue'
 
 const routes = [
   {
@@ -59,6 +61,16 @@ const routes = [
     path: '/kakao',
     name: 'KakaoAPIView',
     component: KakaoAPIView
+  },
+  {
+    path: '/plus',
+    name: 'plus',
+    component: plus
+  },
+  {
+    path: '/mobile',
+    name: 'mobiletest',
+    component: Mobiletest
   },
 
   {
