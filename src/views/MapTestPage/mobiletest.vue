@@ -42,6 +42,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: 'Pretendard', sans-serif;
+}
 /* Background setup */
 .background {
   background-color: #eaeaea; /* Modify to match the fixed background color */
@@ -89,7 +92,7 @@ header {
 .card {
   background-color: #f5f5f5;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 18px;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
