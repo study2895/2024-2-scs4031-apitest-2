@@ -1,14 +1,31 @@
+// const express = require('express')
+// const path = require('path')
+// const app = express()
+
+// // 빌드된 정적 파일 제공
+// app.use(express.static(path.join(__dirname, 'dist')))
+
+// // 모든 요청에 대해 index.html 반환
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+// })
+
+// // 포트 설정
+// const PORT = process.env.PORT || 8000 // Koyeb가 제공하는 포트 사용
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`)
+// })
+
 const express = require('express')
-const path = require('path')
 const cors = require('cors')
 const axios = require('axios')
 
 const app = express()
-const PORT = process.env.PORT || 8000 // 배포 환경의 포트를 사용하거나 기본 포트 8000을 사용
+const PORT = 5000
 
 app.use(cors())
 
-// 네이버 지역 검색 API
+//네이버 지역 검색 API
 app.get('/api/search', async (req, res) => {
   const query = req.query.query
   const URL = 'https://openapi.naver.com/v1/search/local.json'
@@ -34,15 +51,6 @@ app.get('/api/search', async (req, res) => {
   }
 })
 
-// 정적 파일 제공 (배포 환경)
-app.use(express.static(path.join(__dirname, 'dist')))
-
-// 모든 경로에 대해 index.html 반환 (Vue 라우팅 대응)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'))
-})
-
-// 서버 시작
 app.listen(PORT, () => {
   console.log(`서버가 포트 ${PORT}에서 실행 중입니다.`)
 })

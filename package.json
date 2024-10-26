@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --no-eslint",
+    "build": "vue-cli-service build",
     "start-server": "node server.js",
     "dev": "concurrently \"npm run serve\" \"npm run start-server\""
   },
@@ -19,7 +20,8 @@
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue3-naver-maps": "^4.2.0",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

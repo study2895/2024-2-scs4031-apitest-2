@@ -1,10 +1,18 @@
 import { createStore } from 'vuex'
-import { search } from './modules/search.js'
+import createPersistedState from 'vuex-persistedstate'
+import departure from './modules/departure'
+import destination from './modules/destination'
+import time from './modules/time'
 
-const store = createStore({
+export default createStore({
   modules: {
-    search
-  }
+    departure,
+    destination,
+    time
+  },
+  plugins: [
+    createPersistedState({
+      paths: ['departure', 'destination', 'time']
+    })
+  ]
 })
-
-export default store
